@@ -1,3 +1,11 @@
+Richard Masci -- Woodstock, GA
+I started out on Apple ][+ in 1980, and now work as a Team Lead at AT&T. I use Go all the time as a
+replacement to Bash, PHP, Perl, TCL, Ruby... Once I found that Go could parse through a 500mb csv file
+in 2 seconds vs. the 9 seconds in Ruby... I was hooked because I had 2000+ files to process in 5 locations a day.
+
+Best feature of Go is that I can write it on a Mac. It then runs on Linux, Windows, Raspberry PI. Crosscompile is 
+VERY easy, and I don't have to worry about what version of perl, or what extensions are installed. 
+
 # projEuler529
 This is project 529 from https://projecteuler.net/problem=529
 
