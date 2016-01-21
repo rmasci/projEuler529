@@ -9,7 +9,7 @@ import (
 func main() {
 	// initialize arg as a string.
 	var arg string
-	fmt.Println("Please input a numbers, ex: 19028037046055")
+	fmt.Println("Please input some numbers, ex: 19028037046055")
 	for {
 		fmt.Printf("Numbers: ")
 		// User types in a number...hopefully more than 2 digits
