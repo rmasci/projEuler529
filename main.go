@@ -4,19 +4,18 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-	//"os"
 )
 
 func main() {
 	// initialize arg as a string.
 	var arg string
-	fmt.Println("Please input a numbers something larger than 10")
+	fmt.Println("Please input a numbers, ex: 19028037046055")
 	for {
 		fmt.Printf("Numbers: ")
 		// User types in a number...hopefully more than 2 digits
 		fmt.Scanln(&arg)
 		if len(arg) <= 1 {
-			fmt.Printf("C'mon, give me a number larger than 10 to work with here...\n")
+			fmt.Printf("C'mon, give me a number I can work with here!\n")
 		} else {
 			fmt.Printf("Great! you've given me the number %v that has %v digits!\n", arg, len(arg))
 			break
@@ -28,8 +27,11 @@ func main() {
 	a := strings.Split(arg, "")
 	// make another slice
 	arg2 := make([]string, lArg)
-	// We need two loops. Loop 1 loops through the string. Loop 2 also
-	// loops through the string but starts at the i1 position.
+	// We need two main loops, Loop 1 loops through the string. Loop 2 also
+	// loops through the string but starts at the i1 position, and once it has
+    // a substring that equals 10, it goes to loop3. Loop 3 looks for any '0' that
+    // might follow.  5500055. [55]00055 equals 10, but so does [550]0055, and 
+    // [5500]055. If we exited loop2 without loop3 we'd loose the '0's 
     fmt.Println("Substrings that equal 10:")
 	for i1 := 0; i1 <= lArg-1; i1++ {
 		// ct is used for the addition of the substring.
@@ -51,10 +53,7 @@ func main() {
 				for ary, aStr := range arg[i1 : i2+1] {
 					arg2[ary+i1] = string(aStr)
 				}
-				// zero is hard to catch, 523 matches 10, so does 5230
-				// So if the next digit in our string equals 0, that
-				// makes a new substring that equals 10. 55000000 wouldn't
-				// work without this loop.main
+				// zero is hard to catch, go into loop 3.
 				i3 := i2 + 1
 				i := 1
 				for i3 <= lArg-1 {
